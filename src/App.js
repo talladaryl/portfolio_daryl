@@ -1,14 +1,20 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Menu from "./components/Menu";
-import Accueil from "./components/Accueil"; // Un seul import du composant Accueil
-import "bootstrap/dist/css/bootstrap.min.css";
+import Accueil from "./components/Accueil";
+import Skills from "./components/Skills";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Menu />
-      <Accueil />
-    </div>
+      <Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/Skills" element={<Skills />} />
+        {/* Ajoutez d'autres routes ici */}
+      </Routes>
+    </Router>
   );
 }
 
